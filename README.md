@@ -37,17 +37,20 @@ Command used:
 ```bash
 nmap -sT -Pn -p 1-200 192.168.100.25
 ```
-# Evidence in Firewall Logs
+## Evidence in Firewall Logs
 
 Windows Firewall logging was enabled to capture network activity.
 
 The firewall logs recorded multiple blocked TCP connection attempts from the Kali Linux machine.
 
-Example entries:
+**Example entries:**
+
+```text
 DROP TCP 192.168.100.19 192.168.100.25 52614 139
 DROP TCP 192.168.100.19 192.168.100.25 40370 445
 DROP TCP 192.168.100.19 192.168.100.25 46934 135
 DROP TCP 192.168.100.19 192.168.100.25 46226 49157
+```
 
 These logs clearly show repeated attempts to access different ports on the target machine.
 
